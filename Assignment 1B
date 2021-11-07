@@ -1,0 +1,33 @@
+package assignment;
+
+import java.util.Scanner;
+
+public class Assignment1B {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		Scanner scanMe = new Scanner (System.in);
+		
+		System.out.println("Enter yearly interest rate : ");
+        double interestRate = scanMe.nextDouble();
+        
+        System.out.println("Enter number of years as an integer : ");
+        int numYears = scanMe.nextInt();
+        
+        System.out.println("Enter loan amount : ");
+        int loan = scanMe.nextInt();
+        
+        double interest = (loan * interestRate * numYears);
+        double monthlyPayment = (loan * (interestRate *(1 + interestRate)*numYears)/((1 + interestRate)*numYears)-1);
+        double m = Math.round(monthlyPayment/100);
+        double totalPayment = (numYears*12) *3.5/100 * loan;
+        		
+        System.out.println("The interest is " +interest);
+        
+        System.out.println("The monthly payment is " +m);
+      
+        System.out.println("The total payment is " +totalPayment);
+	}
+
+}
